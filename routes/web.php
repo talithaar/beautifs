@@ -23,3 +23,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/products', 'index');
     Route::get('/products/create', 'create');
 });
+
+Route::controller(ServiceManController::class)->group(function(){
+    Route::get('/serviceman', 'index');
+});
