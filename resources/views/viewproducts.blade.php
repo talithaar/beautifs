@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
     <title>View Products | Product Store</title>
     <!-- Styles etc. -->

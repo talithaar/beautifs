@@ -1,9 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::controller(ProductController::class)->group(function(){
-    Route::get('/products', 'index');
-    Route::get('/products/create', 'create');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 Route::controller(ServiceManController::class)->group(function(){
     Route::get('/serviceman', 'index');
