@@ -32,3 +32,23 @@ require __DIR__.'/auth.php';
 Route::controller(RatingController::class)->group(function(){
     Route::get('/rating', 'index');
 });
+
+Route::controller(BagController::class)->group(function(){
+    Route::get('/bag', 'index');
+});
+
+Route::controller(DetailsController::class)->group(function(){
+    Route::get('/details', 'index');
+});
+
+Route::controller(EditProfileController::class)->group(function(){
+    Route::get('/editprofile', 'index');
+});
+
+Route::controller(ProfileController::class)->group(function(){
+    Route::get('/profile', 'index');
+});
+
+Route::controller(ServiceController::class)->group(function(){
+    Route::get('/service', 'index');
+});
