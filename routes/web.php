@@ -60,3 +60,11 @@ Route::controller(pembayaranberhasilController::class)->group(function(){
 Route::controller(pembayarangagalController::class)->group(function(){
     Route::get('/pembayarangagal', 'index');
 });
+
+Route::controller(aboutController::class)->group(function () {
+    Route::get('/about', 'index');
+});
+
+Route::controller(ServiceWomenController::class)->group(function () {
+    Route::get('/servicewomen', 'index');
+});
