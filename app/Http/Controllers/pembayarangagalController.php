@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class pembayarangagalController extends Controller
+class PembayaranGagalController extends Controller
 {
     //
     public function index(){

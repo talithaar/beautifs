@@ -53,15 +53,15 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('/service', 'index');
 });
 
-Route::controller(pembayaranberhasilController::class)->group(function(){
+Route::controller(PembayaranBerhasilController::class)->group(function(){
     Route::get('/pembayaranberhasil', 'index');
 });
 
-Route::controller(pembayarangagalController::class)->group(function(){
+Route::controller(PembayaranGagalController::class)->group(function(){
     Route::get('/pembayarangagal', 'index');
 });
 
-Route::controller(aboutController::class)->group(function () {
+Route::controller(AboutController::class)->group(function () {
     Route::get('/about', 'index');
 });
 
