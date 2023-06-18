@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 100vw; overflow-x: hidden;">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/cormorant-2" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Our Service</title>
+    <title>Home</title>
 </head>
 
 <style>
@@ -25,58 +25,182 @@
 
     }
 
-    .bg-main {
-        background-color: #023A15;
+    ol.custom-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ol.custom-list li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    ol.custom-list li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+    }
+
+    ol.custom-list li.image-list:before {
+      background-image: url(images/check.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+    }
+
+    ol.custom-list li span {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
     }
 </style>
 
-<body class="bg-[#023A15]">
-    <!-- <nav class="flex flex-wrap items-center justify-between py-4">
+<body class="bg-[#023A15]" style="overflow-x: hidden; width: 100%">
+    <nav class="flex flex-wrap items-center justify-between py-4">
         <div class="ml-24">
-            <img src="images/logo.svg" alt="">
+            <img src="images/logo.png" style="width: 200px" alt="">
         </div>
 
         <div class="flex gap-[70px] text-white">
-            <a class="" href="">Home</a>
-            <a href="">About</a>
-            <a href="" class="text-white/[0.4]">Service</a>
-            <a href="">Order</a>
-            <a href="">Shopping Cart</a>
+            <a href="/home">Home</a>
+            <a href="/about">About</a>
+            <a href="/service" class="">Service</a>
+            <a href="/order">Order</a>
+            <a class="text-white/[0.4]"href="/bag">Shopping Cart</a>
+
         </div>
         <div class="flex items-center mr-12 gap-4">
             <i class="fa-solid fa-lg fa-magnifying-glass text-white w-"></i>
             <div
                 class="w-[145px] gap-2 h-[48px] ring-1 ring-white/[0.4] flex pl-1 items-center rounded-lg bg-[#AAAAAA]/[0.48]">
-                <img class="w-12 h-12 flex rounded-full"
-                    src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                    alt="">
+                <a href="/editprofile">
+                    <img class="w-12 h-12 flex rounded-full"
+                        src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                        alt="">
+                    </a>
                 <h1 class="text-white">pengguna 1</h1>
             </div>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" style="color: white; font-weight: 400;">Logout</button>
+            </form>
         </div>
-    </nav> -->
+    </nav>
     <!-- start content -->
 
-    <div class="bg-[#fdf6f3] w-full h-full py-24">
-        <h1 class="font-cormorant w-[600px] text-center mx-auto text-[100px]">PEMBAYARAN BERHASIL!</h1>
-        <a href="">
-            <div
-                class="w-[300px] h-24 bg-main font-montserrat hover:bg-[#023A15]/[0.7] text-lg font-semibold text-white rounded-2xl mx-auto flex justify-center items-center">
-                RATE NOW OUR SERVICE</div>
-        </a>
-        <div class="flex justify-center mt-6">
-            <a class="font-montserrat hover:underline-offset-4 underline " href="">Back to Home</a>
-        </div>
-
+    <div class="flex justify-center items-center my-32 relative text-6xl w-full h-full font-cormorant">
+        <h1 class="text-white relative z-10">Shopping Bag</h1>
+        <img class="absolute w-64 z-0 right-[45%]" src="images/circ.svg" alt="">
     </div>
-
+    <!-- 2nd content -->
+    <div class=" px-[130px] bg-[#FDF5F3] py-12">
+        <div class="flex flex-row">
+        <div class="flex flex-col">
+            <div class="flex flex-row items-center gap-2">
+                <img class="w-6 h-6" src="images/bag.svg" alt="">
+                <h1 class="font-cormorant text-[#023A15] text-2xl font-semibold">Bag</h1>
+            </div>
+            <div class="flex flex-row gap-12">
+                <div class="relative">
+                    <img class="w-64 rounded-t-full" src="images/details.png" alt="">
+                    <div
+                        class="w-60 h-12 bg-white mx-auto flex justify-center items-center font-cormorant text-[#023A15] -translate-y-4">
+                        <h1 class="text-2xl">Face Srub</h1>
+                    </div>
+                    <a href="">
+                        <div
+                            class="font-montserrat w-14 h-14 flex justify-center items-center rounded-full bg-[#023A15] text-2xl font-semibold text-white absolute top-0 right-0">
+                            X
+                        </div>
+                    </a>
+                </div>
+                <div class="relative">
+                    <img class="w-64 rounded-t-full" src="images/cares.png" alt="">
+                    <div
+                        class="w-60 h-12 bg-white mx-auto flex justify-center items-center font-cormorant text-[#023A15] -translate-y-7">
+                        <h1 class="text-2xl">Mask</h1>
+                    </div>
+                    <a href="">
+                        <div
+                            class="font-montserrat w-14 h-14 flex justify-center items-center rounded-full bg-[#023A15] text-2xl font-semibold text-white absolute top-0 right-0">
+                            X
+                        </div>
+                    </a>
+                </div>
+                <div>
+                </div>
+                <div class="flex flex-col font-montserrat justify-center mx-4 items-center gap-3">
+                    <i class="fa fa-plus fa-2xl text-[#023A15]"></i>
+                    <p class="text-[#567C49] text-xl">Add Cart</p>
+                </div>
+                <div>
+                    <div class="flex flex-col">
+                        <h1 class="font-cormorant text-[#023A15] text-xl">Order Summary</h1>
+                        <hr class="outline-none  w-96 bg-[#023A15]">
+                        <div class="flex flex-row font-montserrat my-2 justify-between text-[#567C49]">
+                            <p class="w-28">Face Scrub</p>
+                            <p>RP 289.000,00</p>
+                        </div>
+                        <div class="flex flex-row font-montserrat my-2 justify-between text-[#567C49]">
+                            <p class="w-28">Botox Filler</p>
+                            <p>RP 988.000,00</p>
+                        </div>
+                        <div class="flex flex-row font-montserrat my-2 justify-between text-[#567C49]">
+                            <p class="w-28">Tax</p>
+                            <p>RP 37.000,00</p>
+                        </div>
+                        <hr class="outline-none  w-96 bg-[#023A15]">
+                        <div class="flex flex-row font-montserrat my-2 justify-between text-[#567C49]">
+                            <p class="w-28">Total</p>
+                            <p>RP 1.314.000,00</p>
+                        </div>
+                        <div class="flex flex-col gap-3 items-center justify-center">
+                            <div class="font-montserrat my-2 text-[#567C49]">
+                                <h1>Payments</h1>
+                            </div>
+                            <a href="/pembayaranberhasil">
+                                <div class="w-80 h-11 bg-[#023A15] font-montserrat font-medium uppercase hover:opacity-80 rounded-full text-white flex justify-center items-center">
+                                    DEBIT CARD
+                                </div>
+                            </a>
+                            <a href="/pembayarangagal">
+                                <div class="w-80 h-11 bg-[#023A15] font-montserrat font-medium uppercase hover:opacity-80 rounded-full text-white flex justify-center items-center">
+                                    CREDIT CARD
+                                </div>
+                            </a>
+                            <a href="/pembayaranberhasil">
+                                <div class="w-80 h-11 bg-[#023A15] font-montserrat font-medium uppercase hover:opacity-80 rounded-full text-white flex justify-center items-center">
+                                    OFFLINE PAYMENT
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="font-cormorant flex items-center relative text-[#023A15]">
+            <p class="text-2xl">tell us where is your</p>
+            <h1 class="text-4xl relative z-10 ml-9">LOCATION</h1>
+            <img class="w-48 absolute h-40 z-0 right-[67%]" src="images/circ.svg" alt="">
+        </div>
+    </div>
+    <div>
+        <a href="https://www.google.com/maps/place/Sepuluh+Nopember+Institute+of+Technology/@-7.2823507,112.7923504,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fa1323221a93:0x306c3c99adedb258!8m2!3d-7.282356!4d112.7949253!16zL20vMDRndng5?entry=ttu">
+        <img src="images/map.png" alt="">
+        </a>
+    </div>
     <!-- end content -->
     <div class="flex flex-col py-20 items-center justify-center bg-[#3c634a] gap-[62px]">
         <div class=" relative">
-            <h1 class="text-white text-6xl relative z-10 text-center w-[896px]"
-                style="font-family: 'Cormorant', sans-serif;">
+            <h1 class="text-white text-6xl  text-center w-[896px]" style="font-family: 'Cormorant', sans-serif;">
                 Get the latest update about our products and services
             </h1>
-            <img class="absolute bottom-14 w-56 z-0 left-[42%]" src="images/circ.svg" alt="">
+            <img class="absolute bottom-12 left-[40%]" src="images/nyiksa.svg" alt="">
         </div>
 
         <div class="relative">
@@ -167,9 +291,6 @@
                 </div>
             </div>
             <hr class="bg-white mt-24 h-[0.5px]">
-        </div>
-        <div class="flex justify-center">
-            <h1 class="text-white">Copyright © 2023</h1>
         </div>
     </footer>
 </body>
